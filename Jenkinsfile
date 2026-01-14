@@ -2,6 +2,7 @@ pipeline {
     agent {label 'workernode2'}
 
     environment {
+        PATH = "/usr/bin:/bin:/usr/local/bin"
         ANSIBLE_CONFIG = "${WORKSPACE}/ansible.cfg"
     }
 
