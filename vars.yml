@@ -1,0 +1,6 @@
+region: us-east-1
+instance_type: t2.micro
+ami_id: ami-0ecb62995f68bb549   # Amazon Linux 2
+key_name: ansible-key
+security_group: web-sg
+tag_name: web-server

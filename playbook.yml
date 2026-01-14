@@ -1,0 +1,8 @@
+- name: Dynamic inventory demo 
+  hosts: all
+  tasks:
+    - name: ping the server 
+      ping:
+    - name: Print instance name
+      debug:
+        msg: "Instance name is {{ tags.Name }}" 

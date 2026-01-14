@@ -1,0 +1,19 @@
+- name: Launch EC2 instance dynamically
+  hosts: localhost
+  gather_facts: no
+  vars_files:
+    - vars.yml
+  tasks:
+    - name: Launch Ubuntu EC2
+      amazon.aws.ec2_instance:
+        name: "{{ tag_name }}"
+        key_name: "{{ key_name }}"
+        instance_type: "{{ instance_type }}"
+        image_id: "{{ ami_id }}"
+        wait: yes
+        region: "{{ region }}"
+        count: 1
+        vpc_subnet_id: subnet-0d55ef29df2fd3ffc   # Replace with your subnet
+        security_group: "{{ security_group }}"
+        tags:
+          Role: "{{ tag_name }}"
