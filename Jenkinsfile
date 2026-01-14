@@ -32,7 +32,7 @@ pipeline {
         stage('Deploy Apache using Dynamic Inventory') {
             steps {
                 sh '''
-                /usr/bin/ansible-playbook deploy_apache.yml
+                /usr/bin/ansible-playbook -i aws_ec2.yml ubuntuapache.yml
                 '''
             }
         }
